@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const sassMiddleware = require('node-sass-middleware');
+const fileUpload     = require('express-fileupload');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(
 
 var index = require('./app/controllers/index');
 var timeline = require('./app/controllers/timeline');
+var upload = require('./app/controllers/upload');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -39,6 +41,7 @@ app.use('/public/javascripts', express.static(__dirname + '/public/javascripts')
 
 app.use('/', index);
 app.use('/timeline', timeline);
+app.use('/upload', upload);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

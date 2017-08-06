@@ -1,0 +1,25 @@
+<%- include ../header.ejs %>
+<form action='' method='post' enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Product label</label>
+        <input type="text" name="title" class="form-control" maxlength="100" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea class="form-control" name="description" maxlength="100" rows=""></textarea>
+    </div>
+    <div class="form-group">
+        <label>Cost of product</label>
+        <input type="number" id="costDollars" name="cost_dollars" class="form-control" min="0" />
+        <span class="float-dot-point">.</span>
+        <input type="number" id="costCents" name="cost_cents" class="form-control" min='0' max="99" maxlength="2" />
+    </div>
+    <div class="form-group">
+        <label>Product</label>
+        <input type="file" name='product' />
+    </div>
+    <div class="form-group">
+        <button>Upload Product</button>
+    </div>
+</form>
+<%- include ../footer.ejs %>
