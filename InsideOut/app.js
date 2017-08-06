@@ -25,6 +25,7 @@ app.use(
 );
 
 var index = require('./app/controllers/index');
+var timeline = require('./app/controllers/timeline');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -37,6 +38,7 @@ app.use('/public/stylesheets', express.static(__dirname + '/public/stylesheets')
 app.use('/public/javascripts', express.static(__dirname + '/public/javascripts'));
 
 app.use('/', index);
+app.use('/timeline', timeline);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -2,6 +2,14 @@
 <html>
     <head>
         <link href='./public/stylesheets/app.css' rel="stylesheet" />
+        <script
+          src="http://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <% if (file) { %>
+            <link href='./public/stylesheets/<%= file; %>.css' rel='stylesheet' />
+            <script src='./public/javascripts/<%= file; %>.js'></script>
+        <% }; %>
     </head>
     <body>
         <header>

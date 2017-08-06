@@ -9,6 +9,7 @@ html, body {
 body {
     background: #005580;
     font-family: Arial;
+    color: #fff;
 }
 
 header {
@@ -56,4 +57,12 @@ header {
 
     }
 
+}
+
+main {
+    position: relative;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
 }
