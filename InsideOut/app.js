@@ -6,9 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const sassMiddleware = require('node-sass-middleware');
 const fileUpload     = require('express-fileupload');
+const session        = require('express-session');
 
 var app = express();
-
+app.use(session({secret: "anjfhsjdfhsjeuwkdh", resave: false, saveUninitialized: false}));
 // view engine setup
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('models', path.join(__dirname, 'app/models'));
@@ -24,6 +25,13 @@ app.use(
        debug: true,
    })
 );
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(bodyParser.json());
+app.use(fileUpload());
 
 var index = require('./app/controllers/index');
 var timeline = require('./app/controllers/timeline');
